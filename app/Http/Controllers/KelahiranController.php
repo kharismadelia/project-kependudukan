@@ -15,10 +15,10 @@ class KelahiranController extends Controller
     public function index()
     {
         // mengambil data dari table data kelahiran
-    	$kelahiran = DB::table('data_kelahiran')->get();
+    	$lahir = DB::table('data_kelahiran')->get();
  
     	// mengirim data kelahiran ke view index
-    	return view('index',['data_kelahiran' => $kelahiran]);
+    	return view('kelahiran',['lahir' => $lahir]);
     }
 
     /**
@@ -28,7 +28,8 @@ class KelahiranController extends Controller
      */
     public function create()
     {
-        //
+        // memanggil view tambah
+        return view('tambahkelahiran');
     }
 
     /**
@@ -39,7 +40,18 @@ class KelahiranController extends Controller
      */
     public function store(Request $request)
     {
-        //
+            // insert data ke table data_kelahiran
+        DB::table('data_kelahiran')->insert([
+            'id_kelahiran' => $request->id_kelahiran,
+            'no_akte' => $request->no_akte,
+            'nama_anak' => $request->nama_anak,
+            'tempat_lahir' => $request->tempat_lahir,
+            'tgl_lahir' => $request->tgl_lahir,
+            'nama_bapak' => $request->nama_bapak,
+            'nama_ibu' => $request->nama_ibu
+        ]);
+        // alihkan halaman ke halaman kelahiran
+        return redirect('/kelahiran');
     }
 
     /**

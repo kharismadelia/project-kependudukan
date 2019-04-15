@@ -5,7 +5,7 @@
         </div>
 
         <!--logo start-->
-        <a href="index.html" class="logo">Sistem Informasi <span class="lite"> Kependudukan </span></a>
+        <a href="index" class="logo">Sistem Informasi <span class="lite"> Kependudukan </span></a>
         <!--logo end-->
 
         <div class="nav search-row" id="top_menu">
@@ -49,7 +49,7 @@
                     <a href="#"><i class="icon_chat_alt"></i> Chats</a>
                 </li>
                 <li>
-                    <a href="login"><i class="icon_key_alt"></i> Log Out</a>
+                    <a href="{{url('/logout')}}"><i class="icon_key_alt"></i> Log Out</a>
                 </li>
                 <li>
                     <a href="documentation.html"><i class="icon_key_alt"></i> Documentation</a>

@@ -10,14 +10,37 @@
           </li>
           <li class="sub-menu">
             <a href="javascript:;" class="">
-                          <i class="icon_document_alt"></i>
-                          <span>Forms</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
-                      </a>
+                <i class="icon_document_alt"></i>
+                  <span> Data Kelahiran</span>
+                    <span class="menu-arrow arrow_carrot-right"></span>
+            </a>
             <ul class="sub">
-              <li><a class="" href="form_component.html"> Data Kelahiran </a></li>
-              <li><a class="" href="form_validation.html"> Data Penduduk </a></li>
-              <li><a class="" href="form_validation.html"> Data Kematian </a></li>
+              <li><a class="" href="kelahiran"> Show Data </a></li>
+              <li><a class="" href="tambahkelahiran"> Add Data </a></li>
+            </ul>
+          </li>
+
+          <li class="sub-menu">
+            <a href="javascript:;" class="">
+                <i class="icon_document_alt"></i>
+                  <span> Data Penduduk </span>
+                    <span class="menu-arrow arrow_carrot-right"></span>
+            </a>
+            <ul class="sub">
+              <li><a class="" href=""> Show Data </a></li>
+              <li><a class="" href="form_validation.html"> Add Data </a></li>
+            </ul>
+          </li>
+
+          <li class="sub-menu">
+            <a href="javascript:;" class="">
+                <i class="icon_document_alt"></i>
+                  <span> Data Kematian </span>
+                    <span class="menu-arrow arrow_carrot-right"></span>
+            </a>
+            <ul class="sub">
+              <li><a class="" href=""> Show Data </a></li>
+              <li><a class="" href="form_validation.html"> Add Data </a></li>
             </ul>
           </li>
       
