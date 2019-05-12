@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Data_penduduk;
+use App\Data_kematian;
 
-class KelahiranController extends Controller
+class KematianController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,11 +16,12 @@ class KelahiranController extends Controller
      */
     public function index()
     {
-        // mengambil data dari table data kelahiran
-    	$lahir = DB::table('data_kelahiran')->get();
+        // mengambil data dari table data
+        $kematian = Data_kematian::with(['penduduks'])
+        ->get();
  
-    	// mengirim data kelahiran ke view index
-    	return view('kelahiran',['lahir' => $lahir]);
+        // mengirim data kelahiran ke view index
+        return view('kematian', compact('kematian'));
     }
 
     /**
@@ -28,8 +31,9 @@ class KelahiranController extends Controller
      */
     public function create()
     {
+        $penduduk = Data_penduduk::orderBy('id_penduduk', 'ASC')->get();
         // memanggil view tambah
-        return view('tambahkelahiran');
+        return view('tambahkematian', compact('penduduk'));
     }
 
     /**
@@ -40,19 +44,14 @@ class KelahiranController extends Controller
      */
     public function store(Request $request)
     {
-            // insert data ke table data_kelahiran
-        DB::table('data_kelahiran')->insert([
-            'id_kelahiran' => $request->id_kelahiran,
-            'no_akte' => $request->no_akte,
-            'nama_anak' => $request->nama_anak,
-            'jenis_kelamin' => $request->jenis_kelamin,
-            'tempat_lahir' => $request->tempat_lahir,
-            'tgl_lahir' => $request->tgl_lahir,
-            'nama_bapak' => $request->nama_bapak,
-            'nama_ibuk' => $request->nama_ibuk
+        DB::table('data_kematian')->insert([
+            'id_penduduk' => $request->id_penduduk,
+            'tgl_meninggal' => $request->tgl_meninggal,
+            'tempat_meninggal' => $request->tempat_meninggal,
+            'keterangan' => $request->keterangan
         ]);
-        // alihkan halaman ke halaman kelahiran
-        return redirect('/kelahiran');
+    // alihkan halaman ke halaman kelahiran
+        return redirect('/kematian');
     }
 
     /**
@@ -75,9 +74,10 @@ class KelahiranController extends Controller
     public function edit($id)
     {
         // mengambil data kelahiran berdasarkan id yang dipilih
-        $lahir = DB::table('data_kelahiran')->where('id_kelahiran',$id)->get();
+        $kematian = Data_kematian::with(['penduduks'])->where('id_kematian',$id)->get();
+        $penduduk = Data_penduduk::orderBy('id_penduduk', 'ASC')->get();
         // passing data kelahiran yang didapat ke view edit.blade.php
-        return view('editkelahiran',['lahir' => $lahir]);
+        return view('editkematian',compact('kematian', 'penduduk'));
     }
 
     /**
@@ -89,18 +89,15 @@ class KelahiranController extends Controller
      */
     public function update(Request $request, $id)
     {
-            // update data kelahiran
-        DB::table('data_kelahiran')->where('id_kelahiran',$request->id)->update([
-            'no_akte' => $request->no_akte,
-            'nama_anak' => $request->nama_anak,
-            'jenis_kelamin' => $request->jenis_kelamin,
-            'tempat_lahir' => $request->tempat_lahir,
-            'tgl_lahir' => $request->tgl_lahir,
-            'nama_bapak' => $request->nama_bapak,
-            'nama_ibuk' => $request->nama_ibuk
+        //update data penduduk
+        DB::table('data_kematian')->where('id_kematian', $id)->update([
+            'id_penduduk' => $request->id_penduduk,
+            'tgl_meninggal' => $request->tgl_meninggal,
+            'tempat_meninggal' => $request->tempat_meninggal,
+            'keterangan' => $request->keterangan
         ]);
         // alihkan halaman ke halaman kelahiran
-        return redirect('/kelahiran');
+        return redirect('kematian');
     }
 
     /**
@@ -111,10 +108,9 @@ class KelahiranController extends Controller
      */
     public function destroy($id)
     {
-        // menghapus data berdasarkan id yang dipilih
-        DB::table('data_kelahiran')->where('id_kelahiran',$id)->delete();
+        DB::table('data_kematian')->where('id_kematian',$id)->delete();
         
         // alihkan halaman ke halaman kelahiran
-        return redirect('/kelahiran');
+        return redirect('kematian');
     }
 }
