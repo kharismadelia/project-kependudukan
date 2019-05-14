@@ -4,7 +4,7 @@
 
 <section class="wrapper">
         <!--overview start-->
-        <div class="row">
+        <div class="row">m
           <div class="col-lg-12">
             <h3 class="page-header"><i class="fa fa-laptop"></i> Data Penduduk </h3>
           </div>
@@ -13,15 +13,15 @@
                 <table class="table table-striped table-advance table-hover">
                   <tbody>
                     <tr>
-                      <th><i class="icon_star"></i> NIK </th>
+                      <th><i class="icon_id"></i> NIK </th>
                       <th><i class="icon_profile"></i> Nama </th>
-                      <th><i class="icon_profile"></i> Agama </th>
-                      <th><i class="icon_profile"></i> Kabupaten/Kota </th>
-                      <th><i class="icon_profile"></i> Kecamatan </th>
-                      <th><i class="icon_profile"></i> Alamat </th>
-                      <th><i class="icon_profile"></i> Pend Akhir </th>
-                      <th><i class="icon_profile"></i> Status </th>
-                      <th><i class="icon_profile"></i> Pekerjaan </th>
+                      <th><i class="icon_lock"></i> Agama </th>
+                      <th><i class="icon_pin_alt"></i> Kab/Kota </th>
+                      <th><i class="icon_pin_alt"></i> Kecamatan </th>
+                      <th><i class="icon_house"></i> Alamat </th>
+                      <th><i class="icon_book"></i> Pend Akhir </th>
+                      <th><i class="icon_heart"></i> Status </th>
+                      <th><i class="icon_bag"></i> Pekerjaan </th>
                       <th><i class="icon_cogs"></i>Opsi</th>
                     </tr>
                   

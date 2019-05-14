@@ -56,4 +56,5 @@ Route::get('kematian/destroy/{id}','KematianController@destroy');
 
 Auth::routes();
 Route::get('/home', 'HomeController@index');
+Route::get('kelahiran/cari','KelahiranController@cari');
 Route::get('/home/login', 'HomeController@logout');

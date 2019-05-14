@@ -9,12 +9,17 @@
             <h3 class="page-header"><i class="fa fa-laptop"></i> Data Kelahiran </h3>
           </div>
         </div>
+          <form action="{{ url( 'kelahiran/cari') }}" method="GET">
+            <input type="text" name="cari" placeholder="Cari Nama" value="{{ old('cari') }}">
+            <input type="submit" value="CARI">
+          </form>
+          <br/>
 
                 <table class="table table-striped table-advance table-hover">
                   <tbody>
                     <tr>
                       <th><i class="icon_star"></i>No Akte</th>
-                      <th><i class="icon_profile"></i>Nama Anak</th>
+                      <th><i class="icon_profile"></i>Nama </th>
                       <th><i class="icon_profile"></i>Jenis Kelamin</th>
                       <th><i class="icon_pin_alt"></i>Tempat Lahir</th>
                       <th><i class="icon_calendar"></i>Tanggal Lahir</th>

@@ -10,7 +10,9 @@
           </div>
         </div>
  
-		<a href="kematian"> Kembali</a>
+		<a href="{{ url('kematian')}}"> Kembali</a>
+		<br/>
+		<br/>
 		
 		
 	 	@foreach($kematian as $m)

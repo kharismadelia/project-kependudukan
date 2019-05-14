@@ -11,8 +11,9 @@
         </div>
 
  
-		<a href="penduduk"> Kembali</a>
+		<a href="{{ url('penduduk')}}"> Kembali</a>
 
+		<br/>
 		<br/>
 		
 	 	@foreach($penduduk as $p)
@@ -53,7 +54,7 @@
 						<div class="form-group">
 							<label class="col-lg-2 control-label"> Kabupaten/ Kota  </label>
 							<div class="col-lg-10">
-								<input type="text" name="kabupaten" class="form-control" required="required" value="{{ $p->kabupaten }}">
+								<input type="text" name="kabupaten" class="form-control" required="required" value="{{ $p->kabupaten_kota }}">
 							</div>
 						</div>
 
@@ -74,14 +75,22 @@
 						<div class="form-group">
 							<label class="col-lg-2 control-label"> Pendidikan Terakhir </label>
 							<div class="col-lg-10">
-								<input type="text" name="pend_akhir" class="form-control" required="required" value="{{ $p->pend_akhir }}">
+								<input type="text" name="pend_akhir" class="form-control" required="required" value="{{ $p->pendidikan_terakhir }}">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label class="col-lg-2 control-label"> Status </label>
 							<div class="col-lg-10">
-								<input type="text" name="status" class="form-control" required="required" value="{{ $p->status }}">
+								<label>
+									<input type="radio" name="status" value="Kawin"
+									<?php if($p->status=='Kawin') : echo 'checked'; ?><?php endif;?>> Kawin
+								</label>
+								<br/>
+								<label>
+									<input type="radio" name="status" value="Belum Kawin" 
+									<?php if($p->status=='Belum Kawin') : echo 'checked'; ?><?php endif;?>> Belum Kawin
+								</label>
 							</div>
 						</div>
 

@@ -13,10 +13,10 @@
                 <table class="table table-striped table-advance table-hover">
                   <tbody>
                     <tr>
-                      <th><i class="icon_star"></i> NIK </th>
-                      <th><i class="icon_profile"></i> Tanggal Meninggal </th>
-                      <th><i class="icon_profile"></i> Tempat Meninggal </th>
-                      <th><i class="icon_profile"></i> Keterangan </th>
+                      <th><i class="icon_id"></i> NIK </th>
+                      <th><i class="icon_calendar"></i> Tanggal Meninggal </th>
+                      <th><i class="icon_pin_alt"></i> Tempat Meninggal </th>
+                      <th><i class="icon_menu-square_alt"></i> Keterangan </th>
                       <th><i class="icon_cogs"></i>Opsi</th>
                     </tr>
                   

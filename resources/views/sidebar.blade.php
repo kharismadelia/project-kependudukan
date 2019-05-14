@@ -15,8 +15,8 @@
                     <span class="menu-arrow arrow_carrot-right"></span>
             </a>
             <ul class="sub">
-              <li><a class="" href="kelahiran"> Lihat Data </a></li>
-              <li><a class="" href="tambahkelahiran"> Tambah Data </a></li>
+              <li><a class="" href="{{ url('kelahiran')}}"> Lihat Data </a></li>
+              <li><a class="" href="{{ url('tambahkelahiran')}}"> Tambah Data </a></li>
             </ul>
           </li>
 
@@ -27,8 +27,8 @@
                     <span class="menu-arrow arrow_carrot-right"></span>
             </a>
             <ul class="sub">
-              <li><a class="" href="penduduk"> Lihat Data </a></li>
-              <li><a class="" href="tambahpenduduk"> Tambah Data </a></li>
+              <li><a class="" href="{{ url('penduduk')}}"> Lihat Data </a></li>
+              <li><a class="" href="{{ url('tambahpenduduk')}}"> Tambah Data </a></li>
             </ul>
           </li>
 
@@ -39,12 +39,12 @@
                     <span class="menu-arrow arrow_carrot-right"></span>
             </a>
             <ul class="sub">
-              <li><a class="" href="kematian"> Lihat Data </a></li>
-              <li><a class="" href="tambahkematian"> Tambah Data </a></li>
+              <li><a class="" href="{{ url('kematian')}}"> Lihat Data </a></li>
+              <li><a class="" href="{{ url('tambahkematian')}}"> Tambah Data </a></li>
             </ul>
           </li>
       
-        </ul>
+    
         <!-- sidebar menu end-->
       </div>
     </aside>

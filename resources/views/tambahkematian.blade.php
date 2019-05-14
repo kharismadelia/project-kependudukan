@@ -7,7 +7,7 @@
         <!--overview start-->
         <div class="row">
           <div class="col-lg-12">
-            <h3 class="page-header"><i class="fa fa-laptop"></i> Data Kelahiran </h3>
+            <h3 class="page-header"><i class="fa fa-laptop"></i> Data Kematian </h3>
           </div>
         </div>
 
@@ -20,7 +20,7 @@
 					<form action="{{ url('kematian/store') }}" method="post" class="form-horizontal" role="form">
 						{{ csrf_field() }}
 						<div class="form-group">
-							<label for="id_penduduk" class="col-lg-2 control-label"> ID Penduduk </label>
+							<label for="id_penduduk" class="col-lg-2 control-label"> NIK </label>
 							<div class="col-lg-10">
 								<select type="text" name="id_penduduk" required="required" id="id_penduduk" class="form-control"> 
 									@foreach($penduduk as $p)

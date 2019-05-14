@@ -11,8 +11,8 @@
         </div>
 
  
-		<a href="kelahiran"> Kembali</a>
-		
+		<a href="{{ url('kelahiran')}}"> Kembali</a>
+		<br/>
 		<br/>
 
 	 	@foreach($lahir as $k)
@@ -42,7 +42,15 @@
 						<div class="form-group">
 							<label class="col-lg-2 control-label"> Jenis Kelamin </label>
 							<div class="col-lg-10">
-								<input type="text" name="jenis_kelamin" class="form-control" required="required" value="{{ $k->jenis_kelamin }}">
+								<label>
+									<input type="radio" name="jenis_kelamin" value="Perempuan"
+									<?php if($k->jenis_kelamin=='Perempuan') : echo 'checked'; ?><?php endif;?>> Perempuan
+								</label>
+								<br/>
+								<label>
+									<input type="radio" name="jenis_kelamin" value="Laki-Laki" 
+									<?php if($k->jenis_kelamin=='Laki-Laki') : echo 'checked'; ?><?php endif;?>> Laki-laki
+								</label>
 							</div>
 						</div>
 

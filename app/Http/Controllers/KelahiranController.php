@@ -26,6 +26,21 @@ class KelahiranController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function cari(Request $request)
+    {
+        // menangkap data pencarian
+        $cari = $request->cari;
+ 
+            // mengambil data dari table pegawai sesuai pencarian data
+        $lahir = DB::table('data_kelahiran')
+        ->where('nama_anak','like',"%".$cari."%")
+        ->paginate();
+ 
+            // mengirim data pegawai ke view index
+        return view('kelahiran',['lahir' => $lahir]);
+ 
+    }
+
     public function create()
     {
         // memanggil view tambah

@@ -36,7 +36,13 @@
 						<div class="form-group">
 							<label class="col-lg-2 control-label"> Jenis Kelamin </label>
 							<div class="col-lg-10">
-								<input type="text" name="jenis_kelamin" required="required" class="form-control">
+								<label>
+									<input type="radio" name="jenis_kelamin" value="Perempuan" required="required" > Perempuan
+								</label>
+								<br/>
+								<label>
+									<input type="radio" name="jenis_kelamin" value="Laki-Laki" required="required"> Laki-laki
+								</label>
 							</div>
 						</div>
 
